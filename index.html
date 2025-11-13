@@ -3,120 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Temperature Converter</title>
+  <title>Tech Startup Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-      background: #f3f4f6;
+    }
+
+    body {
+      background: #f7f9fc;
+      color: #1a1a1a;
+    }
+
+    header {
+      background: #e0f2f1;
+      padding: 60px 20px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-    .converter-box {
-      background: #1f2937;
-      color: white;
-      padding: 2rem;
-      border-radius: 12px;
-      width: 300px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    .hero-text {
+      max-width: 500px;
+      padding: 20px;
     }
-    .converter-box h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #facc15;
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #004d40;
     }
-    label {
-      display: block;
-      margin: 0.8rem 0 0.3rem;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 0.5rem;
-      border: none;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    button {
-      background-color: #facc15;
-      color: #1f2937;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .result {
-      margin-top: 1rem;
-      text-align: center;
+
+    .hero-text p {
+      margin-top: 15px;
       font-size: 1.1rem;
-      font-weight: bold;
-      color: #facc15;
+      color: #333;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hero-img img {
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .stats h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .stats p {
+      font-size: 1.2rem;
+    }
+
+    footer {
+      padding: 25px;
+      background: #263238;
+      color: #fff;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-img img {
+        margin-top: 30px;
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="converter-box">
-    <h2>Temperature Converter</h2>
-    <label for="tempInput">Enter Temperature:</label>
-    <input type="number" id="tempInput" placeholder="e.g. 100" />
+  <header>
+    <div class="hero-text">
+      <h1>Innovate. Build. Launch.</h1>
+      <p>We help startups and entrepreneurs bring their ideas to life with cutting-edge technology and beautiful design.</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg" alt="Startup Image">
+    </div>
+  </header>
 
-    <label for="unit">Convert From:</label>
-    <select id="unit">
-      <option value="celsius">Celsius (°C)</option>
-      <option value="fahrenheit">Fahrenheit (°F)</option>
-      <option value="kelvin">Kelvin (K)</option>
-    </select>
+  <section>
+    <div class="features">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721270.png" alt="Web Dev" />
+        <h3>Custom Web Development</h3>
+        <p>Responsive and modern websites built for your brand and goals.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1041/1041885.png" alt="App Dev" />
+        <h3>Mobile App Solutions</h3>
+        <p>Cross-platform mobile apps with fast performance and great UX.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/4149/4149656.png" alt="Cloud" />
+        <h3>Cloud Integration</h3>
+        <p>Secure and scalable cloud services to power your growth.</p>
+      </div>
+    </div>
+  </section>
 
-    <label for="targetUnit">Convert To:</label>
-    <select id="targetUnit">
-      <option value="celsius">Celsius (°C)</option>
-      <option value="fahrenheit">Fahrenheit (°F)</option>
-      <option value="kelvin">Kelvin (K)</option>
-    </select>
+  <section class="features">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Security" />
+      <h3>Secure & Scalable</h3>
+      <p>We use top security standards and scalable architecture.</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Friendly" />
+      <h3>User-Centered Design</h3>
+      <p>Every product is built with the end-user experience in mind.</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/4781/4781513.png" alt="Fast" />
+      <h3>Fast & Reliable Delivery</h3>
+      <p>Agile teams focused on quick delivery and high quality.</p>
+    </div>
+  </section>
 
-    <button onclick="convertTemperature()">Convert</button>
-    <div class="result" id="resultArea"></div>
-  </div>
+  <section class="stats">
+    <h2>Trusted by 150+ startups in 25+ countries</h2>
+    <p>Join our global tech community. Let's build the future together!</p>
+  </section>
 
-  <script>
-    function convertTemperature() {
-      const input = parseFloat(document.getElementById("tempInput").value);
-      const from = document.getElementById("unit").value;
-      const to = document.getElementById("targetUnit").value;
-      const resultArea = document.getElementById("resultArea");
-
-      if (isNaN(input)) {
-        resultArea.textContent = "❌ Please enter a valid number!";
-        return;
-      }
-
-      if (from === to) {
-        resultArea.textContent = `⚠️ Same unit selected! Result: ${input.toFixed(2)}°`;
-        return;
-      }
-
-      let result;
-
-      // Convert from source unit to Celsius
-      let tempInC;
-      if (from === "celsius") tempInC = input;
-      else if (from === "fahrenheit") tempInC = (input - 32) * (5 / 9);
-      else if (from === "kelvin") tempInC = input - 273.15;
-
-      // Convert from Celsius to target unit
-      if (to === "celsius") result = tempInC;
-      else if (to === "fahrenheit") result = (tempInC * 9 / 5) + 32;
-      else if (to === "kelvin") result = tempInC + 273.15;
-
-      const unitSymbol = {
-        celsius: "°C",
-        fahrenheit: "°F",
-        kelvin: "K"
-      };
-
-      resultArea.textContent = `✅ Result: ${result.toFixed(2)} ${unitSymbol[to]}`;
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 TechStartup</p>
+  </footer>
 
 </body>
 </html>
